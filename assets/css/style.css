@@ -1,0 +1,10 @@
+h1 {
+  padding: 2rem 7% 1.4rem;
+  text-align: center;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+}
+
+.list-card-product {
+  display: flex;
+}
