@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!--style-->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <!--Icons-->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <title>Warung Bibit</title>
+  </head>
+  <body id="beranda">
+    <!-- Navbar start -->
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-light bg-light shadow-sm"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img
+            src="../img/logo/Warung Bibit.png"
+            alt=""
+            width="70"
+            height="70"
+            class="d-inline-block"
+          />Warung <strong>Bibit</strong>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Beranda</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="keranjang.html">Keranjang</a>
+            </li>
+            <li class="nav-item me-2">
+              <a href="masuk.html">
+                <button type="submit" class="btn btn-outline-success">
+                  Masuk
+                </button>
+              </a>
+            </li>
+            <li class="nav-item my-2 my-lg-0">
+              <a href="daftar.html">
+                <button type="submit" class="btn btn-outline-success">
+                  Daftar
+                </button>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Navbar End -->
+
+    <!-- Carousel Start -->
+    <div
+      id="carouselExampleControls"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="../img/banner/banner1.png"
+            class="d-block img-fluid"
+            alt="banner1"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="../img/banner/banner2.png"
+            class="d-block img-fluid"
+            alt="banner2"
+          />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <!-- Carousel End -->
+
+    <!-- Pelayanan Start -->
+    <div class="jasa-container">
+      <h1 class="home-textjudul mb-4 mt-5 text-center">
+        &mdash; Pelayanan Warung Bibit &mdash;
+      </h1>
+      <div class="card-jasa-group">
+        <div class="card text-dark bg-light mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Waktu Pemesanan!</h5>
+            <p class="card-text">
+              Melayani pemesanan dari pukul 07.00 WIB hingga pukul 18.00 WIB.
+            </p>
+          </div>
+        </div>
+        <div class="card text-dark bg-light mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Proses Pengiriman!</h5>
+            <p class="card-text">
+              Pesanan akan diproses dan dikirim dalam waktu 24 jam setelah
+              pembayaran diterima. Estimasi waktu pengiriman adalah 2-7 hari
+              kerja tergantung pada lokasi.
+            </p>
+          </div>
+        </div>
+        <div class="card text-dark bg-light mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Bayar Di Tempat!</h5>
+            <p class="card-text">
+              Bisa bayar di tempat khusus wilayah Jakarta, Depok, Tangerang,
+              Bekasi (JADETABEK) tanpa ada minimal jumlah produk yang dipesan.
+            </p>
+          </div>
+        </div>
+        <div class="card text-dark bg-light mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Gratis Ongkos Kirim!</h5>
+            <p class="card-text">
+              Gratis ongkir khusus wilayah Pulau Jawa dengan minimal pemesanan
+              di atas Rp50.000.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Pelayanan End -->
+
+    <!-- Produk Start -->
+    <div class="produk-container" id="produk">
+      <h1 class="home-textjudul mb-4 mt-5 text-center">
+        &mdash; Katalog Produk &mdash;
+      </h1>
+      <div class="card-produk-container">
+        <div class="card-benih">
+          <h3 class="card-produk-text home-textsubjudul mb-4 mt-5 text-center">
+            Produk Benih
+          </h3>
+          <div class="list-card-product-benih"></div>
+        </div>
+        <div class="card-mediatanam">
+          <h3 class="card-produk-text home-textsubjudul mb-4 mt-5 text-center">
+            Produk Media Tanam
+          </h3>
+          <div class="list-card-product-mediaTanam" id="mediaTanam"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Produk End -->
+
+    <!-- Modal Start-->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">...</div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success">
+              Masukkan Keranjang
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal End -->
+
+    <!-- About Start -->
+    <section class="helper" id="helper">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#90B9A4"
+          fill-opacity="1"
+          d="M0,96L48,128C96,160,192,224,288,261.3C384,299,480,309,576,298.7C672,288,768,256,864,245.3C960,235,1056,245,1152,229.3C1248,213,1344,171,1392,149.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+        ></path>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#90B9A4"
+          fill-opacity="1"
+          d="M0,192L48,208C96,224,192,256,288,229.3C384,203,480,117,576,122.7C672,128,768,224,864,224C960,224,1056,128,1152,122.7C1248,117,1344,203,1392,245.3L1440,288L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+        ></path>
+      </svg>
+      <div class="container">
+        <div class="row text-center">
+          <div class="col">
+            <h1 class="home-textjudul mb-3 mt-2 text-center">
+              &mdash; Pusat Bantuan &mdash;
+            </h1>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-hubkam col-md-6 mt-3">
+            <h3 class="home-textsubjudul">Hubungi Kami:</h3>
+            <p class="text">
+              Jika Anda mencari bantuan lebih lanjut, silahkan hubungi kami
+              melalui
+            </p>
+            <img
+              class="img-wa img-fluid"
+              src="../img/logo-whatsapp.png"
+              alt="logo whatsapp"
+            />
+            <a
+              href="https://wa.me/1XXXXXXXXXX"
+              style="text-decoration: none; color: black"
+            >
+              (+62)81296652149 (WhatsApp Only)</a
+            >
+          </div>
+          <div class="col-md-6">
+            <img
+              class="img-hubkam img-fluid"
+              src="../img/hubungikami.png"
+              alt="hubungi kami"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About End -->
+
+    <!-- Footer Start -->
+    <footer
+      class="footer"
+      style="padding-bottom: 1px; color: #000; background-color: #90b9a4"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#fff"
+          fill-opacity="1"
+          d="M0,288L48,272C96,256,192,224,288,218.7C384,213,480,235,576,213.3C672,192,768,128,864,138.7C960,149,1056,235,1152,261.3C1248,288,1344,256,1392,240L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+        ></path>
+      </svg>
+      <div class="container">
+        <div class="copyright">
+          <p>&#169; 2023 Sinta Puspito Rini | All Right Reserved</p>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Icons-->
+    <script>
+      feather.replace();
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!--Javascript-->
+    <script src="../js/script.js"></script>
+  </body>
+</html>
