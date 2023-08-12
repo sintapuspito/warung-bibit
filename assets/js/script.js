@@ -1,9 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Definisikan daftar produk di sini
-  const imageRef = "../img/produk/media tanam/mediatanam";
+  const imageMedia = "../img/produk/media tanam/mediatanam";
+  const imageBenih = "../img/produk/benih/benih";
 
   const daftarBenih = [
     {
+      productId: "B-01",
+      imageRef: imageBenih + "1.png",
       nama: "Benih Okra",
       harga: 9000,
       berat: "1 pcs = 25gr",
@@ -17,6 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
       sisaProduk: 100,
     },
     {
+      productId: "B-02",
+      imageRef: imageBenih + "2.png",
       nama: "Benih Pakchoy",
       harga: 9000,
       berat: "1 pcs = 25gr",
@@ -30,6 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
       sisaProduk: 100,
     },
     {
+      productId: "B-03",
+      imageRef: imageBenih + "3.png",
       nama: "Benih Tomat",
       harga: 9000,
       berat: "1 pcs = 25gr",
@@ -43,6 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
       sisaProduk: 100,
     },
     {
+      productId: "B-04",
+      imageRef: imageBenih + "4.png",
       nama: "Benih Wortel",
       harga: 9000,
       berat: "1 pcs = 25gr",
@@ -62,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const daftarMediaTanam = [
     {
       productId: "MT-01",
-      imageRef: imageRef + "1.png",
+      imageRef: imageMedia + "1.png",
       nama: "Pupuk Kandang",
       harga: 15000,
       berat: "1 pcs = 3327gr",
@@ -74,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       productId: "MT-02",
-      imageRef: imageRef + "2.png",
+      imageRef: imageMedia + "2.png",
       nama: "Pupuk Organik",
       harga: 15000,
       berat: "1 pcs = 3327gr",
@@ -85,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       productId: "MT-03",
-      imageRef: imageRef + "3.png",
+      imageRef: imageMedia + "3.png",
       nama: "Sekam Bakar",
       harga: 15000,
       berat: "1 pcs = 880gr",
@@ -97,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       productId: "MT-04",
-      imageRef: imageRef + "4.png",
+      imageRef: imageMedia + "4.png",
       nama: "Cocopeat",
       harga: 15000,
       berat: "1 pcs = 790gr",
@@ -127,14 +136,15 @@ document.addEventListener("DOMContentLoaded", function () {
       card.style.margin = "1.2rem";
 
       // Isi konten card
-      card.innerHTML = `
-            <img src="../img/produk/benih/benih${
-              index + 1
-            }.png" class="card-img-top" alt="${produk.nama}" />
+      card.innerHTML = `<img src="${imageBenih}${
+        index + 1
+      }.png" class="card-img-top" alt="${produk.nama}" />
             <div class="card-body">
               <div class="card-title-price" style="text-align: center;">
                 <h5 class="card-title">${produk.nama}</h5>
-                <h5 class="card-price">${produk.harga}</h5>
+                 <h5 class="card-price">Rp${produk.harga.toLocaleString(
+                   "id-ID"
+                 )}</h5>
               </div>
               <a href="produk.html" class="btn btn-success benih " style="margin-top: 2.5rem; display: block" data-bs-toggle="modal" data-bs-target="#exampleModal" data-produk-id="${index}">Detail Produk</a>
             </div>
@@ -163,13 +173,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Isi konten card
       card.innerHTML = `
-            <img src="${imageRef}${index + 1}.png" class="card-img-top" alt="${
-        produk.nama
-      }" />
+            <img src="${imageMedia}${
+        index + 1
+      }.png" class="card-img-top" alt="${produk.nama}" />
             <div class="card-body">
               <div class="card-title-price" style="text-align: center;">
                 <h5 class="card-title">${produk.nama}</h5>
-                <h5 class="card-price">${produk.harga}</h5>
+            <h5 class="card-price">Rp${produk.harga.toLocaleString(
+              "id-ID"
+            )}</h5>
               </div>
               <a href="produk.html" class="btn btn-success mediaTanam " style="margin-top: 2.5rem; display: block" data-bs-toggle="modal" data-bs-target="#exampleModal" data-produk-id="${index}">Detail Produk</a>
             </div>
@@ -217,6 +229,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const modal = document.getElementById("exampleModal");
       const modalTitle = modal.querySelector(".modal-title");
       const modalBody = modal.querySelector(".modal-body");
+      const modalFooter = modal.querySelector(".modal-footer");
 
       // Isi konten modal dengan data produk yang sesuai
       modalTitle.textContent = produk.nama;
@@ -232,14 +245,18 @@ document.addEventListener("DOMContentLoaded", function () {
             <p>Family: ${produk.family}</p>
             <!-- Tambahkan informasi produk lainnya sesuai kebutuhan -->
           `;
+      modalFooter.innerHTML = `
+       <button type="button" class="btn btn-success" id="masukkanKeranjang">Masukkan Keranjang</button>
+      `;
       const masukkanKeranjangButton =
-        modalBody.querySelector(".btn.btn-success");
+        modalFooter.querySelector(".btn.btn-success");
       masukkanKeranjangButton.addEventListener("click", function () {
         tambahkanKeKeranjang(
           produk.nama,
           produk.harga,
           produk.imageRef,
-          produk.produkId
+          produk.productId,
+          produk.sisaProduk
         );
         modal.querySelector(".btn-close").click();
       });
@@ -333,3 +350,4 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 console.log(localStorage.getItem("keranjangProduk"));
+// localStorage.clear();

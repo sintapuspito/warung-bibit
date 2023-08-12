@@ -37,37 +37,47 @@ function updateCart() {
     if (produk) {
       const row = document.createElement("tr");
       row.innerHTML = `
-        <th scope="row">
-          <button type="button" class="btn btn-outline-danger btn-sm delete-produk">
-            <i class="df-icon" data-feather="x"></i>
-          </button>
-        </th>
-        <td>
-          <a href="#">
-            <img src="${produk.imageRef}" class="img-keranjang" />
-          </a>
-        </td>
-        <td>${produk.namaProduk}</td>
-        <td>Rp${produk.hargaSatuan}</td>
-        <td>
-          <form class="form-jumlah-produk">
-            <input
-              type="text"
-              class="form-control jumlah-produk"
-              data-produk-id="${produk.productId}"
-              value="${keranjangItem.jumlah}"
-            />
-          </form>
-        </td>
-        <td class="total-harga">Rp${(
-          produk.hargaSatuan * keranjangItem.jumlah
-        ).toLocaleString("id-ID")}</td>
-      `;
-      // ... Tambahkan event listener untuk tombol delete
+      <th scope="row">
+        <button type="button" class="btn btn-outline-danger btn-sm delete-produk" data-produk-id="${
+          produk.productId
+        }">
+          <i class="df-icon" data-feather="x"></i>
+        </button>
+      </th>
+      <td>
+        <a href="#">
+          <img src="${produk.imageRef}" class="img-keranjang" />
+        </a>
+      </td>
+      <td>${produk.namaProduk}</td>
+      <td>Rp${produk.hargaSatuan}</td>
+      <td>
+        <form class="form-jumlah-produk">
+          <input
+            type="text"
+            class="form-control jumlah-produk"
+            data-produk-id="${produk.productId}"
+            value="${keranjangItem.jumlah}"
+          />
+        </form>
+      </td>
+      <td class="total-harga">Rp${(
+        produk.hargaSatuan * keranjangItem.jumlah
+      ).toLocaleString("id-ID")}</td>
+    `;
+      // Tambahkan event listener untuk tombol delete
+      const deleteButton = row.querySelector(".delete-produk");
+      deleteButton.addEventListener("click", function () {
+        hapusDariKeranjang(produk.productId);
+        // Hapus baris dari tampilan (DOM)
+        row.remove();
+        // Hitung ulang total harga
+        calculateTotal();
+      });
+
       keranjang.appendChild(row);
     }
   });
-
   feather.replace();
   calculateTotal(); // Panggil fungsi calculateTotal() untuk menghitung total harga
 }
@@ -124,5 +134,36 @@ keranjang.addEventListener("input", event => {
 
   calculateTotal(); // Panggil fungsi calculateTotal() setelah memperbarui nilai input
 });
+
+// Fungsi untuk menghapus produk dari keranjang
+function hapusDariKeranjang(productId) {
+  // Cek apakah data produk sudah ada di local storage
+  let keranjangProduk = localStorage.getItem("keranjangProduk");
+  if (!keranjangProduk) {
+    keranjangProduk = [];
+  } else {
+    keranjangProduk = JSON.parse(keranjangProduk);
+  }
+
+  // Cari indeks produk yang akan dihapus
+  const produkIndex = keranjangProduk.findIndex(
+    produk => produk.productId === productId
+  );
+
+  if (produkIndex !== -1) {
+    // Hapus produk dari array menggunakan splice
+    keranjangProduk.splice(produkIndex, 1);
+
+    // Simpan kembali data keranjangProduk ke dalam local storage
+    localStorage.setItem("keranjangProduk", JSON.stringify(keranjangProduk));
+
+    // Lakukan tindakan lain jika diperlukan
+    console.log("Produk berhasil dihapus dari keranjang");
+  } else {
+    console.log("Produk tidak ditemukan dalam keranjang");
+  }
+}
+
+// Contoh penggunaan untuk menghapus produk berdasarkan productId
 
 console.log(localStorage.getItem("keranjangProduk"));
