@@ -53,12 +53,7 @@
               <a class="nav-link" href="user-beranda.html">Beranda</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="user-keranjang.html"
-                >Keranjang</a
-              >
+              <a class="nav-link" href="user-keranjang.html">Keranjang</a>
             </li>
             <li class="nav-item">
               <div class="dropdown">
@@ -95,70 +90,99 @@
 
     <!-- Navbar End -->
 
-    <!-- Keranjang Start -->
-    <div class="container keranjang-container">
+    <!-- Pembayaran Start -->
+    <div class="container bayar-container">
       <div class="row">
         <div class="col">
-          <h1 class="home-textjudul mb-4 mt-5 judul-keranjang">
-            Keranjang Belanja
+          <h1 class="home-textjudul mb-4 mt-5 judul-bayar">
+            Isi Form Pembayaran
           </h1>
         </div>
       </div>
-      <div class="row table-responsive row-produk">
+      <div class="row">
         <div class="col">
-          <table class="table table-hover">
-            <thead class="table-success">
-              <tr>
-                <th scope="col" class="th-header">Hapus</th>
-                <th scope="col" class="th-header">Gambar</th>
-                <th scope="col" class="th-header">Produk</th>
-                <th scope="col" class="th-header">Harga</th>
-                <th scope="col" class="th-header">Jumlah</th>
-                <th scope="col" class="th-header">Subtotal</th>
-              </tr>
-            </thead>
-            <tbody class="table-hover align-middle" id="keranjang"></tbody>
-          </table>
-        </div>
-      </div>
-      <div class="row row-produk">
-        <div class="col table-responsive">
-          <table
-            class="table ms-auto text-center mb-5 mt-3 mx-3"
-            id="table-checkout"
-          >
-            <thead class="table-success">
-              <tr>
-                <th scope="col" colspan="2" class="th-header">
-                  Total Keranjang Belanja
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="fw-bold th-header">Total Harga</td>
-                <td class="th-header" id="total-harga">Rp0</td>
-              </tr>
-              <tr>
-                <td colspan="2" class="th-header">
-                  <div class="btn-checkout d-grid">
-                    <button
-                      type="button"
-                      class="btn btn-success btn-sm mx-4"
-                      id="submit"
-                      onclick="printdate()"
+          <form>
+            <div class="row">
+              <div class="col-sm-5 col-md-6">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"
+                    >Nama Lengkap</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+              </div>
+              <div class="col-sm-5 col-md-6">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"
+                    >No.Telepon</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+              </div>
+              <div class="col-sm-5 col-md-6">
+                <div class="mb-3">
+                  <label for="exampleFormControlTextarea1" class="form-label"
+                    >Alamat</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="exampleFormControlTextarea1"
+                    rows="3"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="col d-flex">
+                <div class="col-5 col-md-6 me-4">
+                  <div class="mb-3 form-bayar">
+                    <label for="exampleInputEmail1" class="form-label"
+                      >Total Harga</label
                     >
-                      Lanjutkan Pembayaran
-                    </button>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="exampleInputEmail1"
+                      aria-describedby="emailHelp"
+                    />
                   </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                </div>
+                <div class="col-7 col-md-6">
+                  <label for="exampleInputEmail1" class="form-label"
+                    >Metode Pembayaran</label
+                  >
+                  <div class="mb-3 d-flex">
+                    <img
+                      class="img-dana img-fluid me-3"
+                      src="../img/LogoDana.png"
+                      alt="logo Dana"
+                    />
+                    <p>0812-1567-1811 a.n. Wiji Dwi Lestari</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="d-grid gap-2 col-6 mx-auto mt-3">
+                <button type="button" class="btn btn-success">
+                  Proses Pembayaran
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
-    <!-- Keranjang End -->
+
+    <!-- Pembayaran End -->
 
     <!-- Footer Start -->
     <footer

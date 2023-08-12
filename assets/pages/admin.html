@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!--style-->
+    <link rel="stylesheet" href="../css/style-admin.css" />
+
+    <!--Icons-->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <title>Warung Bibit</title>
+  </head>
+  <body id="beranda">
+    <div class="d-flex" id="wrapper">
+      <!-- Sidebar -->
+      <div class="bg-white" id="sidebar-wrapper">
+        <div
+          class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"
+        >
+          <i class="fas fa-user-secret me-2"></i>Warung Bibit
+        </div>
+        <div class="list-group list-group-flush my-3">
+          <a
+            href="#"
+            class="list-group-item list-group-item-action bg-transparent second-text active"
+            ><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a
+          >
+          <a
+            href="#"
+            class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+            ><i class="fas fa-project-diagram me-2"></i>Produk</a
+          >
+          <a
+            href="#"
+            class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+            ><i class="fas fa-chart-line me-2"></i>Riwayat Pesanan</a
+          >
+          <a
+            href="#"
+            class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+            ><i class="fas fa-paperclip me-2"></i>Daftar Pelanggan</a
+          >
+
+          <a
+            href="#"
+            class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"
+            ><i class="fas fa-power-off me-2"></i>Logout</a
+          >
+        </div>
+      </div>
+      <!-- /#sidebar-wrapper -->
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+        <nav
+          class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4"
+        >
+          <div class="d-flex align-items-center">
+            <i
+              class="fas fa-align-left primary-text fs-4 me-3"
+              id="menu-toggle"
+            ></i>
+            <h2 class="fs-2 m-0">Dashboard</h2>
+          </div>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle second-text fw-bold"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-user me-2"></i>Sinta Puspito
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown"></ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <div class="container-fluid px-4">
+          <div class="row g-3 my-2">
+            <div class="col-md-6">
+              <div
+                class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded"
+              >
+                <div>
+                  <h3 class="fs-2">5</h3>
+                  <p class="fs-5">Pesanan</p>
+                </div>
+                <i
+                  class="fas fa-gift fs-1 primary-text border rounded-full secondary-bg p-3"
+                ></i>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div
+                class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded"
+              >
+                <div>
+                  <h3 class="fs-2">Rp50.000</h3>
+                  <p class="fs-5">Total Pesanan</p>
+                </div>
+                <i
+                  class="fas fa-hand-holding-usd fs-1 primary-text border rounded-full secondary-bg p-3"
+                ></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid px-4">
+          <div class="row my-5">
+            <h3 class="fs-4 mb-3">Pesanan</h3>
+            <div class="col table-responsive">
+              <table class="table bg-white rounded shadow-sm table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Tanggal</th>
+                    <th scope="col">No. Transaksi</th>
+                    <th scope="col">Pesanan</th>
+                    <th scope="col">Bukti Bayar</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Aksi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>02/05/2023</td>
+                    <td>00100</td>
+                    <td>
+                      <a href=""
+                        ><button
+                          type="button"
+                          class="btn btn-outline-success btn-sm"
+                        >
+                          Detail
+                        </button></a
+                      >
+                    </td>
+                    <td>
+                      <div class="input-group-sm">
+                        <input
+                          type="text"
+                          aria-label="Bukti-Bayar"
+                          class="form-control"
+                          style="width: 100px"
+                        />
+                      </div>
+                    </td>
+                    <td>Sedang Diproses</td>
+                    <td class="d-grid gap-2 d-md-block">
+                      <a href=""
+                        ><button
+                          type="button"
+                          class="btn btn-outline-success btn-sm me-1"
+                        >
+                          Ubah
+                        </button></a
+                      ><a href=""
+                        ><button
+                          type="button"
+                          class="btn btn-outline-danger btn-sm"
+                        >
+                          Hapus
+                        </button></a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>02/05/2023</td>
+                    <td>00100</td>
+                    <td>
+                      <a href=""
+                        ><button
+                          type="button"
+                          class="btn btn-outline-success btn-sm"
+                        >
+                          Detail
+                        </button></a
+                      >
+                    </td>
+                    <td>
+                      <div class="input-group-sm">
+                        <input
+                          type="text"
+                          aria-label="Bukti-Bayar"
+                          class="form-control"
+                          style="width: 100px"
+                        />
+                      </div>
+                    </td>
+                    <td>Sedang Diproses</td>
+                    <td class="d-grid gap-2 d-md-block">
+                      <a href=""
+                        ><button
+                          type="button"
+                          class="btn btn-outline-success btn-sm me-1"
+                        >
+                          Ubah
+                        </button></a
+                      ><a href=""
+                        ><button
+                          type="button"
+                          class="btn btn-outline-danger btn-sm"
+                        >
+                          Hapus
+                        </button></a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /#page-content-wrapper -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      var el = document.getElementById("wrapper");
+      var toggleButton = document.getElementById("menu-toggle");
+
+      toggleButton.onclick = function () {
+        el.classList.toggle("toggled");
+      };
+    </script>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Icons-->
+    <script>
+      feather.replace();
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!--Javascript-->
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

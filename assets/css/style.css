@@ -3,7 +3,6 @@
 body {
   /* background-color: #f6f7fb; */
   font-family: "Poppins", sans-serif;
-  color: #2d2d2d;
 }
 
 /* CSS Masuk Start */
@@ -224,16 +223,42 @@ footer {
 #table-checkout {
   width: 40%;
 }
+
+.keranjang-container .btn {
+  border-radius: 10px;
+}
 /* CSS Keranjang End */
 
 /* CSS Riwayat Pembelian */
 
 /* CSS Riwayat Pembelian */
+
+/* CSS Pembayaran */
+.img-dana {
+  width: 35%;
+  height: 35px;
+}
+
+.bayar-container .btn {
+  border-radius: 10px;
+}
+
+.bayar-container .form-control {
+  border-radius: 10px;
+}
+
 /* Media Screen */
 @media screen and (max-width: 994px) {
   .card-produk-container .card-produk-text {
     text-align: center;
     padding-right: 50px;
+  }
+
+  .sidebar-nav {
+    transform: none;
+    visibility: visible !important;
+    top: 56px;
+    height: calc(100% - 56px);
   }
 }
 
@@ -264,7 +289,56 @@ footer {
     text-align: center;
   }
 
+  .container .judul-bayar {
+    text-align: center;
+  }
   .helper .col-hubkam .text {
     font-size: 14px;
+  }
+}
+
+/* ------------------------------------------ */
+
+/* Admin */
+#side_nav {
+  background: #000;
+  min-width: 250px;
+  max-width: 250px;
+  transition: all 0.3s;
+}
+
+.content {
+  min-height: 100vh;
+  width: 100%;
+}
+
+hr .h-color {
+  background: #eee;
+}
+
+.sidebar li.active {
+  background: #eee;
+  border-radius: 10px;
+}
+
+.sidebar li.active a,
+.sidebar li.active a:hover {
+  color: #000;
+}
+
+.sidebar li a {
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  #side_nav {
+    margin-left: -250;
+    position: fixed;
+    min-height: 100vh;
+    z-index: 1;
+  }
+
+  #side_nav.active {
+    margin-left: 0;
   }
 }
